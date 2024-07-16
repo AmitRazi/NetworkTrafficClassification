@@ -66,4 +66,15 @@ The data used in this project is a Parquet file containing processed packet capt
 
 ## Results
 
-The performance of each model is evaluated based on classification accuracy and other metrics provided by the classification report. The best hyperparameters for Logistic Regression are determined using grid search.
+In our study comparing models for encrypted QUIC traffic classification, we found that as we moved from simpler to more advanced models, the accuracy improved.
+
+- **Logistic Regression**: 83% accuracy
+- **Multi-Layer Perceptron (MLP)**: 92% accuracy
+- **Long Short-Term Memory (LSTM) networks**: 94% accuracy
+- **Convolutional Neural Networks (CNN)**: 95% accuracy
+
+The Logistic Regression model started us off with an 83% accuracy, indicating that even basic analysis can be quite revealing. The Multi-Layer Perceptron (MLP) model took us a step further, reaching a 92% accuracy, showing the value of a more complex approach in understanding the data.
+
+The more advanced models, the Long Short-Term Memory (LSTM) networks and Convolutional Neural Networks (CNN), achieved the highest accuracies at 94% and 95%, respectively. While the difference between LSTM and CNN might seem small, it's important to note that this gap was consistently observed across various datasets, different sequence lengths, and when filtering sessions by time instead of the number of packets. This consistency suggests that CNNs, with their superior ability to detect complex patterns, slightly edge out LSTMs in this specific task.
+
+Despite the apparent closeness in performance, the consistent advantage of CNNs underlines their robustness and adaptability in analyzing encrypted traffic data.
